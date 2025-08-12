@@ -1,0 +1,106 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&family=Inter:wght@400;700&display=swap');
+
+/* --- General Body Styles --- */
+body {
+font-family: 'Inter', sans-serif; /* Default font for the entire page copy */
+margin: 0;
+padding: 0;
+background-color: #E0FFFF; /* Light blue for overall background */
+color: #333; /* Dark grey for default text */
+}
+
+/* --- Header Styles --- */
+header {
+background-color: #20B2AA; /* Sea green for header background */
+color: white; /* White text for header */
+padding: 20px;
+text-align: center;
+}
+
+h1 {
+font-family: 'Comfortaa', cursive; /* Font for the main title */
+font-size: 3em; /* Large size for the main site title */
+font-weight: 700; /* Bold weight */
+margin: 0; /* Remove default margin */
+}
+
+/* --- Navigation Styles --- */
+nav {
+background-color: #3CB371; /* Darker green for nav background */
+padding: 10px 0;
+text-align: center;
+}
+
+nav ul {
+list-style: none; /* Remove bullet icons from list because I don't like them */
+padding: 0;
+margin: 0;
+display: flex; /* Render list horizontally */
+justify-content: center; /* Center the navigation links */
+}
+
+nav ul li {
+margin: 0 15px; /* Spacing between navigation links */
+}
+
+nav a {
+color: white; /* White text for navigation links */
+text-decoration: none; /* Remove underlines from links because I don't like that styling*/
+font-weight: 700; /* Bold weight for navigation links */
+font-size: 1.1em; 
+padding: 5px 10px; /* Padding around links for ease of navigation */
+}
+
+nav a:hover {
+color: #FFD700; /* Gold for nav links hover state */
+}
+
+/* --- Main Content Area Styles --- */
+main {
+padding: 30px;
+max-width: 800px;
+margin: 20px auto; 
+background-color: #FFFAFA; /* Off-shite background for content */
+text-align: center;
+line-height: 1.5; 
+}
+
+main p {
+font-size: 1.2em; 
+color: #2F4F4F; /* Dark gray text color */
+margin: 0; /* Remove default paragraph margin */
+padding: 0 15px; /* Add horizontal padding to the text block */
+}
+
+/* --- Footer Styles --- */
+footer {
+background-color: #4682B4; /* Blue background color for footer */
+color: white; /* White text for footer */
+padding: 20px;
+text-align: center;
+margin-top: 40px; /* Space between the footer and main content area above it */
+}
+
+footer ul {
+list-style: none; /* Remove bullet icons because I don't like them */
+padding: 0;
+margin: 0;
+display: flex; /* Render links list horizontally */
+justify-content: center; /* Center the footer links */
+margin-bottom: 10px; /* Space between links and copyright */
+}
+
+footer ul li {
+margin: 0 10px; /* Spacing between footer links */
+}
+
+footer a {
+color: #ADD8E6; 
+text-decoration: none; /* Remove underlines */
+font-size: 0.9em; /* Smaller font for footer links */
+}
+
+footer a:hover {
+color: #FFD700; /* Gold for nav links hover state */
+}
