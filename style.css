@@ -73,7 +73,7 @@ margin: 0; /* Remove default paragraph margin */
 padding: 0 15px; /* Add horizontal padding to the text block */
 }
 
-/* --- Footer Styles --- */
+/* -- Footer Styles -- */
 footer {
 background-color: #4682B4; /* Blue background color for footer */
 color: white; /* White text for footer */
@@ -103,4 +103,31 @@ font-size: 0.9em; /* Smaller font for footer links */
 
 footer a:hover {
 color: #FFD700; /* Gold for nav links hover state */
+}
+
+/* Blog page styles */
+
+.blog-entry {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #f9f9f9; /* the background for each blog post will be white */
+    border-radius: 8px;
+    text-align: left;
+}
+
+/* Each blog entry will have an H2 header */
+.blog-entry h2 {
+    color: #4682b4;
+    font-size: 1.8em;
+    margin-bottom: 10px;
+}
+
+/* Each text block under each blog entry's header will be rendered in italics */
+
+.blog-entry .date {
+    font-style: italic; 
+    color: #555;
+    display: block;
+    margin-bottom: 10px;
 }
