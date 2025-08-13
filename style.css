@@ -123,7 +123,7 @@ color: #FFD700; /* Gold for nav links hover state */
     margin-bottom: 10px;
 }
 
-/* Each text block under each blog entry's header will be rendered in italics */
+/* Each  blog entry will include a date above the header that will be rendered in italics */
 
 .blog-entry .date {
     font-style: italic; 
