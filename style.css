@@ -131,3 +131,25 @@ color: #FFD700; /* Gold for nav links hover state */
     display: block;
     margin-bottom: 10px;
 }
+/* Custom styles for the gallery content to ensure it aligns properly */
+.gallery-entry {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.gallery-entry h2 {
+    color: #4682b4;
+    font-size: 1.8em;
+    margin-bottom: 20px;
+}
+
+.gallery-entry img {
+    max-width: 100%; /* Ensures images are responsive */
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
