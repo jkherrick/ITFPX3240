@@ -81,6 +81,7 @@ margin: 20px auto;
 background-color: #FFFAFA; /* Off-shite background for content */
 text-align: center;
 line-height: 1.5; 
+flex: 1; /* This is the key change to make the main section fill the available space */
 }
 
 main p {
