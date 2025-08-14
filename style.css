@@ -37,10 +37,10 @@ header a:hover {
 }
 
 h1 {
-    font-family: 'Comfortaa', cursive; /* Font for the main title */
-    font-size: 3em; /* Large size for the main site title */
-    font-weight: 700; /* Bold weight */
-    margin: 0;
+font-family: 'Comfortaa', cursive; /* Font for the main title */
+font-size: 3em; /* Large size for the main site title */
+font-weight: 700; /* Bold weight */
+margin: 0; 
 }
 
 /* --- Navigation Styles --- */
@@ -54,19 +54,19 @@ nav ul {
     list-style: none; /* Remove bullet icons from list because I don't like them */
     padding: 0;
     margin: 0;
-    display: flex; /* Render list horizontally */
-    justify-content: center; /* Center the navigation links */
+    display: flex; /* Make the list a flex container */
+    justify-content: center; /* Center the links horizontally */
+    flex-wrap: wrap; /* Allow nav links to wrap to the next line on smaller screens */
 }
 
 nav ul li {
-    margin: 0 15px; /* Spacing between navigation links */
+    margin: 0 15px; /* Add horizontal spacing between links */
 }
 
 nav a {
-    color: white; /* White text for navigation links */
-    text-decoration: none; /* Remove underlines from links because I don't like that styling*/
+    color: white; /* White text for nav links because I like that styling*/
     font-weight: 700; /* Bold weight for navigation links */
-    font-size: 1.1em;
+    font-size: 1.1em; 
     padding: 5px 10px; /* Padding around links for ease of navigation */
 }
 
@@ -76,20 +76,16 @@ nav a:hover {
 
 /* --- Main Content Area Styles --- */
 main {
-    padding: 30px 15px; /* Added padding for mobile screens */
-    max-width: 800px;
-    margin: 20px auto;
-    background-color: #FFFAFA; /* Off-white background for content */
+    padding: 30px;
+    max-width: 1200px; /* Increased max-width for better gallery layout */
+    margin: 20px auto; 
+    background-color: #FFFAFA; /* Off-shite background for content */
     text-align: center;
-    line-height: 1.5;
-
-    /* The following property makes the main content fill the available space.
-       This is a key change for the new responsive layout. */
-    flex: 1;
+    line-height: 1.5; 
 }
 
 main p {
-    font-size: 1.2em;
+    font-size: 1.2em; 
     color: #2F4F4F; /* Dark gray text color */
     margin: 0; /* Remove default paragraph margin */
     padding: 0 15px; /* Add horizontal padding to the text block */
@@ -101,24 +97,24 @@ footer {
     color: white; /* White text for footer */
     padding: 20px;
     text-align: center;
-    margin-top: auto; /* This pushes the footer to the bottom of the page */
+    margin-top: auto; /* Pushes the footer to the bottom */
 }
 
 footer ul {
     list-style: none; /* Remove bullet icons because I don't like them */
     padding: 0;
     margin: 0;
-    display: flex; /* Render links list horizontally */
-    justify-content: center; /* Center the footer links */
-    margin-bottom: 10px; /* Space between links and copyright */
+    display: flex; /* Make the list a flex container */
+    justify-content: center; /* Center the links horizontally */
+    margin-bottom: 10px;
 }
 
 footer ul li {
-    margin: 0 10px; /* Spacing between footer links */
+    margin: 0 10px; /* Add horizontal spacing between footer links */
 }
 
 footer a {
-    color: #ADD8E6;
+    color: #ADD8E6; 
     text-decoration: none; /* Remove underlines */
     font-size: 0.9em; /* Smaller font for footer links */
 }
@@ -127,7 +123,7 @@ footer a:hover {
     color: #FFD700; /* Gold for nav links hover state */
 }
 
-/* Blog page styles */
+/* --- Blog page styles --- */
 .blog-entry {
     max-width: 800px;
     margin: 40px auto;
@@ -146,19 +142,29 @@ footer a:hover {
 
 /* Each  blog entry will include a date above the header that will be rendered in italics */
 .blog-entry .date {
-    font-style: italic;
+    font-style: italic; 
     color: #555;
     display: block;
     margin-bottom: 10px;
 }
-/* Custom styles for the gallery content to ensure it aligns properly */
-.gallery-entry {
-    max-width: 800px;
+
+/* --- Gallery page styles --- */
+/* The new gallery grid container for the flexible layout */
+.gallery-grid {
+    display: grid;
+    /* This creates a responsive grid that can have as many columns as will fit. */
+    /* On large screens, you'll get multiple columns; on smaller screens, it will stack. */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px; /* Spacing between the grid items */
     margin: 40px auto;
-    padding: 20px;
+}
+
+.gallery-entry {
     background-color: #f9f9f9;
+    padding: 20px;
     border-radius: 8px;
     text-align: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
 .gallery-entry h2 {
@@ -172,6 +178,7 @@ footer a:hover {
     aspect-ratio: 4 / 3;
     width: 100%;
     overflow: hidden; /* This hides any part of the image that gets cropped */
+    margin-bottom: 15px;
 }
 
 .image-container img {
@@ -184,17 +191,33 @@ footer a:hover {
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
-/* Media query for mobile-first approach */
-@media (max-width: 768px) {
-  nav ul {
-    flex-direction: column; /* Stack navigation links vertically */
-  }
+/* --- Contact Page Styles --- */
+/* New styles for the contact information table */
+.contact-info {
+    width: 100%;
+    max-width: 600px;
+    margin: 20px auto;
+    border-collapse: collapse; /* Removes the double border between cells */
+    border-radius: 8px;
+    overflow: hidden; /* Hides table borders that would stick out of the rounded corners */
+}
 
-  nav ul li {
-    margin: 5px 0; /* Adjust spacing for vertical links */
-  }
+.contact-info th, .contact-info td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
 
-  main {
-    padding: 15px; /* Reduce padding on main content for smaller screens */
-  }
+.contact-info th {
+    background-color: #4682B4;
+    color: white;
+    font-weight: bold;
+}
+
+.contact-info tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.contact-info tr:hover {
+    background-color: #ddd;
 }
