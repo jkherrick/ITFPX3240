@@ -153,3 +153,11 @@ color: #FFD700; /* Gold for nav links hover state */
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
+
+/* --- YouTube Embed Styles --- */
+.youtube-embed {
+    width: 560px;
+    height: 315px;
+    margin-top: 20px;
+    border-radius: 8px;
+}
