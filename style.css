@@ -158,7 +158,7 @@ footer a:hover {
     /* At desktop resolutions, the content will render in multiple columns; at smaller breakpoints, it will stack. */
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Force content into a single column at smaller breakpoints. */
     gap: 20px; /* Spacing between the grid items */
-    margin: 40px auto
+    margin: 40px auto;
     padding: 0 20px;
     justify-content: center;
 }
@@ -223,4 +223,27 @@ footer a:hover {
 
 .contact-info tr:hover {
     background-color: #ddd;
+} 
+
+/* Responsive Video Styles */
+.video-container {
+position: relative; /* Establishes a positioning context for children */
+padding-bottom: 56.25%; /* 16:9 aspect ratio (height / width * 100). */
+/* For 4:3 video, use 75% */
+height: 0;
+overflow: hidden;
+max-width: 800px; /* Optional: Limit max width for desktop display */
+margin: 40px auto; /* Center the video and add vertical spacing */
+background-color: #000; /* Black background to cover any loading flicker */
+border-radius: 8px;
+box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.video-container iframe {
+position: absolute; /* Position the iframe relative to its container */
+top: 0;
+left: 0;
+width: 100%; /* Make the iframe fill the container's width */
+height: 100%; /* Make the iframe fill the container's height */
+border: 0; /* Remove default iframe border */
 }
