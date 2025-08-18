@@ -9,11 +9,10 @@ body {
     background-color: #E0FFFF; /* Light blue for overall background */
     color: #333; /* Dark grey for default text */
 
-    /* The following properties make the page a flex container.
-       This is a key change for the new responsive layout. */
+    /* Display: flex was added for the new responsive layout */
     display: flex;
     flex-direction: column; /* Stack the header, nav, main, and footer vertically */
-    min-height: 100vh; /* Ensure the body takes up at least the full viewport height */
+    min-height: 100vh; /* Added so that the body area takes up at least the full viewport height */
 }
 
 /* --- Header Styles --- */
@@ -56,7 +55,7 @@ nav ul {
     margin: 0;
     display: flex; /* Make the list a flex container */
     justify-content: center; /* Center the links horizontally */
-    flex-wrap: wrap; /* Allow nav links to wrap to the next line on smaller screens */
+    flex-wrap: wrap; /* Enable nav links to wrap to the next line at smaller breakpoints */
 }
 
 nav ul li {
@@ -152,8 +151,8 @@ footer a:hover {
 /* The new gallery grid container for the flexible layout */
 .gallery-grid {
     display: grid;
-    /* This creates a responsive grid that can have as many columns as will fit. */
-    /* On large screens, you'll get multiple columns; on smaller screens, it will stack. */
+    /* This creates the responsive grid. Larger breakpoints will see columns; smaller */
+    /* breakpoints will have stacked content. */
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 40px; /* Spacing between the grid items */
     margin: 40px auto;
@@ -173,22 +172,19 @@ footer a:hover {
     margin-bottom: 20px;
 }
 
-/* This new container sets a consistent aspect ratio (4:3) for all images */
+/* Removed styles for YouTube embed, since I decided to remove the video from the About page */
+
+/* The image container was set to use an aspect ratio (4:3) for all images */
 .image-container {
     aspect-ratio: 4 / 3;
     width: 100%;
-    overflow: hidden; /* This hides any part of the image that gets cropped */
     margin-bottom: 15px;
 }
 
 .image-container img {
-    /* The image will now fill its parent container entirely */
+    /* The image will now fill its container */
     width: 100%;
     height: 100%;
-    /* And object-fit will crop it to match the aspect ratio without distortion */
-    object-fit: cover;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
 /* --- Contact Page Styles --- */
@@ -197,9 +193,7 @@ footer a:hover {
     width: 100%;
     max-width: 600px;
     margin: 20px auto;
-    border-collapse: collapse; /* Removes the double border between cells */
     border-radius: 8px;
-    overflow: hidden; /* Hides table borders that would stick out of the rounded corners */
 }
 
 .contact-info th, .contact-info td {
