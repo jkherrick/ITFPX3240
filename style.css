@@ -9,10 +9,12 @@ body {
     background-color: #E0FFFF; /* Light blue for overall background */
     color: #333; /* Dark grey for default text */
 
-    /* Display: flex was added for the new responsive layout */
+    /* Liquid Layout Properties */
+    /* display:flex makes the page a flex container. This enables the content to render responsively. */
+     
     display: flex;
-    flex-direction: column; /* Stack the header, nav, main, and footer vertically */
-    min-height: 100vh; /* Added so that the body area takes up at least the full viewport height */
+    flex-direction: column; /* This ensures that the header, nav, main, and footer stack vertically */
+    min-height: 100vh; /* This was added so that the body takes up at least the full viewport height */
 }
 
 /* --- Header Styles --- */
@@ -55,7 +57,7 @@ nav ul {
     margin: 0;
     display: flex; /* Make the list a flex container */
     justify-content: center; /* Center the links horizontally */
-    flex-wrap: wrap; /* Enable nav links to wrap to the next line at smaller breakpoints */
+    flex-wrap: wrap; /* Allow nav links to wrap to the next line on smaller screens */
 }
 
 nav ul li {
@@ -76,7 +78,7 @@ nav a:hover {
 /* --- Main Content Area Styles --- */
 main {
     padding: 30px;
-    max-width: 1200px; /* Increased max-width for better gallery layout */
+    max-width: 1200px; 
     margin: 20px auto; 
     background-color: #FFFAFA; /* Off-shite background for content */
     text-align: center;
@@ -103,7 +105,7 @@ footer ul {
     list-style: none; /* Remove bullet icons because I don't like them */
     padding: 0;
     margin: 0;
-    display: flex; /* Make the list a flex container */
+    display: flex; /* Make the list a flexible container */
     justify-content: center; /* Center the links horizontally */
     margin-bottom: 10px;
 }
@@ -151,8 +153,8 @@ footer a:hover {
 /* The new gallery grid container for the flexible layout */
 .gallery-grid {
     display: grid;
-    /* This creates the responsive grid. Larger breakpoints will see columns; smaller */
-    /* breakpoints will have stacked content. */
+    /* This creates a responsive grid that can have as many columns as will fit. */
+    /* At desktop resolutions, the content will render in multiple columns; at smaller breakpoints, it will stack. */
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 40px; /* Spacing between the grid items */
     margin: 40px auto;
@@ -172,19 +174,22 @@ footer a:hover {
     margin-bottom: 20px;
 }
 
-/* Removed styles for YouTube embed, since I decided to remove the video from the About page */
-
-/* The image container was set to use an aspect ratio (4:3) for all images */
+/* This new container sets a consistent aspect ratio (4:3) for all images */
 .image-container {
     aspect-ratio: 4 / 3;
     width: 100%;
+    overflow: hidden; /* This hides any part of the image that gets cropped. I applied this solution when I was having problems with small breakpoints. */
     margin-bottom: 15px;
 }
 
 .image-container img {
-    /* The image will now fill its container */
+    /* The image will fill its parent container entirely */
     width: 100%;
     height: 100%;
+    /* Object-fit crops the image so that it matches the aspect ratio */
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
 /* --- Contact Page Styles --- */
@@ -193,7 +198,9 @@ footer a:hover {
     width: 100%;
     max-width: 600px;
     margin: 20px auto;
+    border-collapse: collapse; /* Removes the double border between cells for a cleaner look */
     border-radius: 8px;
+    overflow: hidden; /* The table borders are squared off; this hides the square edges that stick out of the rounded corners */
 }
 
 .contact-info th, .contact-info td {
