@@ -156,7 +156,7 @@ footer a:hover {
     display: grid;
     /* This creates a responsive grid that can have as many columns as will fit. */
     /* At desktop resolutions, the content will render in multiple columns; at smaller breakpoints, it will stack. */
-    grid-template-columns: repeat(auto-fit, minmax250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Force content into a single column at smaller breakpoints. */
     gap: 20px; /* Spacing between the grid items */
     margin: 40px auto
     padding: 0 20px;
@@ -203,7 +203,6 @@ footer a:hover {
     margin: 20px auto;
     border-collapse: collapse; /* Removes the double border between cells for a cleaner look */
     border-radius: 8px;
-    overflow: hidden; /* The table borders are squared off; this hides the square edges that stick out of the rounded corners */
 }
 
 .contact-info th, .contact-info td {
