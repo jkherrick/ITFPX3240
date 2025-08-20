@@ -1,40 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- Developer: Kate Herrick -->
-<!-- August 12, 2025 -->
-<!-- Index.html -->
-<!-- Welcome to Sloth Central, a travel blog about encounters with sloths in the wild. This is the Contact page of the site. --> 
+    <!-- Developer: Kate Herrick -->
+    <!-- August 12, 2025 -->
+    <!-- contact.html -->
+    <!-- Welcome to Sloth Central, a travel blog about encounters with sloths in the wild. This is the Contact page of the site. -->
 
-<title>Sloth Central</title>
 
-<!-- This is where we point to the standalone css in the style.css file -->
+    <title>Sloth Central</title>
 
-<link rel="stylesheet" href="style.css">
+
+    <!-- This is where we point to the standalone css in the style.css file -->
+
+
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-<header>
-    <a href="index.html"><h1>Sloth Central</h1></a>
-</header>
+    <header>
+        <a href="index.html">
+            <h1>Sloth Central</h1>
+        </a>
+    </header>
 
-<!-- These are the links in the nav -->
+    <!-- These are the links in the nav -->
 
-<nav>
-<ul>
-<li><a href="blog.html">Blog</a></li>
-<li><a href="about.html">About</a></li>
-<li><a href="gallery.html">Gallery</a></li>
-<li><a href="contact.html">Contact</a></li>
-</ul>
-</nav>
+    <nav>
+        <ul>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
 
-<main>
+    <main>
     <h2>Contact Information</h2>
-    <!-- The table renders contact information in a grid layout; added additional content to demonstrate the table -->
     <table class="contact-info">
         <thead>
             <tr>
@@ -57,18 +60,48 @@
             </tr>
         </tbody>
     </table>
+
+    <form action="/submit-form" method="post">
+        <fieldset>
+            <legend>Send us a message!</legend>
+
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="user_name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="user_email" required>
+
+            <label for="reason">What's your reason for contacting us?</label>
+            <select id="reason" name="contact_reason" required>
+                <option value="">--Please choose an option--</option>
+                <option value="question">General Question</option>
+                <option value="photo_submission">Photo Submission</option>
+                <option value="feedback">Website Feedback</option>
+                <option value="other">Other</option>
+            </select>
+
+            <label>What's your favorite type of sloth?</label>
+            <div class="radio-group">
+                <input type="radio" id="two-toed" name="sloth_type" value="two-toed" checked>
+                <label for="two-toed">Two-toed Sloth</label>
+
+                <input type="radio" id="three-toed" name="sloth_type" value="three-toed">
+                <label for="three-toed">Three-toed Sloth</label>
+            </div>
+
+            <label for="message">Your Message:</label>
+            <textarea id="message" name="user_message" rows="5" required></textarea>
+
+            <label>I would like to receive:</label>
+            <div class="checkbox-group">
+                <input type="checkbox" id="newsletter" name="newsletter" value="yes">
+                <label for="newsletter">Email Newsletter</label>
+
+                <input type="checkbox" id="updates" name="updates" value="yes">
+                <label for="updates">Occasional Updates</label>
+            </div>
+
+            <button type="submit">Submit</button>
+        </fieldset>
+    </form>
 </main>
-
-<!-- These are the links in the footer -->
-
-<footer>
-<ul>
-<li><a href="#">Legal</a></li>
-<li><a href="#">Privacy</a></li>
-<li><a href="#">Partners</a></li>
-</ul>
-<p> Sloth Central. 2025 All rights reserved.</p>
-</footer>
-
-</body>
-</html>

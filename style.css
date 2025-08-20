@@ -154,7 +154,7 @@ footer a:hover {
 /* The new gallery grid container for the flexible layout */
 .gallery-grid {
     display: grid;
-    /* This creates a responsive grid that can have as many columns as will fit. */
+    /* display: grid creates a responsive grid that can have as many columns as will fit. */
     /* At desktop resolutions, the content will render in multiple columns; at smaller breakpoints, it will stack. */
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Force content into a single column at smaller breakpoints. */
     gap: 20px; /* Spacing between the grid items */
@@ -227,23 +227,100 @@ footer a:hover {
 
 /* Responsive Video Styles */
 .video-container {
-position: relative; /* Establishes a positioning context for children */
-padding-bottom: 56.25%; /* 16:9 aspect ratio (height / width * 100). */
-/* For 4:3 video, use 75% */
+position: relative; /* Set the position of the video container so that the iFrame aligns to it rather than the body element */
+padding-bottom: 56.25%; /* 16:9 aspect ratio (height / width * 100) */
 height: 0;
 overflow: hidden;
-max-width: 800px; /* Optional: Limit max width for desktop display */
+max-width: 800px; /* Limited the maximum width at desktop resolutions so it wouldn't overtake the body content */
 margin: 40px auto; /* Center the video and add vertical spacing */
-background-color: #000; /* Black background to cover any loading flicker */
+background-color: #000; /* Black background */
 border-radius: 8px;
 box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 
 .video-container iframe {
-position: absolute; /* Position the iframe relative to its container */
+position: absolute; /* Set the position the iframe so that the iFrame positions itself from the top left corner of the video container*/
 top: 0;
 left: 0;
 width: 100%; /* Make the iframe fill the container's width */
 height: 100%; /* Make the iframe fill the container's height */
 border: 0; /* Remove default iframe border */
+}
+
+/* --- Form Styles --- */
+form {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    text-align: left;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+fieldset {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+}
+
+legend {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #4682B4;
+    padding: 0 10px;
+}
+
+label {
+    display: block;
+    margin-top: 20px;
+    font-weight: bold;
+    color: #333;
+}
+
+input[type="text"],
+input[type="email"],
+textarea,
+select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box; /* Ensures padding doesn't affect the width */
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+.radio-group,
+.checkbox-group {
+    margin-top: 10px;
+}
+
+.radio-group label,
+.checkbox-group label {
+    display: inline;
+    font-weight: normal;
+}
+
+button[type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    margin-top: 30px;
+    background-color: #3CB371;
+    color: white;
+    font-size: 1.2em;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #20B2AA;
 }
