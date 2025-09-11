@@ -1,0 +1,5 @@
+How does a decision tree classifier work? 
+Explain the Gini impurity criterion used to split the nodes.
+What are the strengths and weaknesses of decision trees?
+What types of problems are decision trees particularly effective for? 
+Why might decision trees not be suitable for certain types of datasets (e.g., high-dimensional or large datasets)?
